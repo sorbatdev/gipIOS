@@ -35,6 +35,17 @@ You have to remove the old _build folder in order for changes to take effect in 
 
 This is because how CMake creates Xcode projects and how Xcode handles files. Xcode has its own file management and compilation system in which you have to supply your source files into a type of list. To avoid doing that, create your new source and header files outside of Xcode (either from your terminal or the "Finder" program), then add these files to the `GlistApp_SOURCES` and `GlistApp_HEADERS` variables inside CMakeLists.txt. Then you have to re-run (Step.5) the bash file.
 
+- If you get the warning:
+    ```
+    CMake Warning:
+  Manually-specified variables were not used by the project:
+
+    GLIST_IOS_DEVELOPMENT_TEAM
+    GLIST_IOS_PRODUCT_BUNDLE_IDENTIFIER
+    GLIST_IOS_PRODUCT_NAME
+    ```
+    you can run the command in step 5 once more. It is generally recommended to run the command twice when you are first setting up everything.
+
 ##### Example
 
 - An example GlistApp project can be found under examples directory.
