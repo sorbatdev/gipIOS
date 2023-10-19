@@ -15,7 +15,7 @@
 
 5. After everything is to your liking, you can run the "generate_glistapp_xcode.sh" with the following command in commandline
 
-    `sh generate_glistapp_xcode.sh`
+    `sh generate_glistapp_xcode.sh ios`
 
 6. When Xcode opens the project, click on ALL_BUILD where it says `ALL_BUILD > My Mac` at the top center of the Xcode screen and select `GlistApp`.
 
@@ -34,3 +34,9 @@ You have to remove the old _build folder in order for changes to take effect in 
 - Why does my files that I created inside Xcode doesn't get included in the compilation?
 
 This is because how CMake creates Xcode projects and how Xcode handles files. Xcode has its own file management and compilation system in which you have to supply your source files into a type of list. To avoid doing that, create your new source and header files outside of Xcode (either from your terminal or the "Finder" program), then add these files to the `GlistApp_SOURCES` and `GlistApp_HEADERS` variables inside CMakeLists.txt. Then you have to re-run (Step.5) the bash file.
+
+##### Example
+
+- An example GlistApp project can be found under examples directory.
+
+- You can put the example GlistApp project under myglistapps, and follow the steps above.

@@ -4,8 +4,12 @@ macro(add_apple_library lib)
     set(LIB_NAME ${lib}_LIB)
     find_library(${LIB_NAME} ${lib})
     list(APPEND IOS_PLUGIN_LINKLIBS ${${LIB_NAME}})
+    
+    if(${LIB_NAME} STREQUAL "NOTFOUND")
+        message(FATAL_ERROR "Could not find the APPLE library ${LIB_NAME}")
+    endif()
 
-    message("LIBRARY NAME: ${${LIB_NAME}}")
+    message(STATUS "Found APPLE Library: ${LIB_NAME}, \n At: ${${LIB_NAME}}")
 endmacro()
 
 if(NOT DEFINED CMAKE_TOOLCHAIN_FILE)
